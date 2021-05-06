@@ -21,6 +21,7 @@ func apiRouter(api *echo.Group) {
 	api.GET("/class/all", control.ClassAll)
 	api.GET("/class/get", control.ClassGet)
 	api.GET("/class/page", control.ClassPage)
+	api.GET("/banner/all", control.BannerAll)
 	// article
 	api.GET("/article/get", control.ArticleGet)
 	api.GET("/article/page", control.ArticlePage)

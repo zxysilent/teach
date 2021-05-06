@@ -133,6 +133,15 @@ func SysInfo(ctx echo.Context) error {
 // @Router /api/banner/all [get]
 func BannerAll(ctx echo.Context) error {
 	mods := make([]model.Banner, 0, 4)
-
+	for idx, val := range _arr {
+		mods = append(mods, model.Banner{
+			Id:    idx + 1,
+			Title: "测试图片",
+			Url:   val,
+			Cunix: time.Now().Unix(),
+		})
+	}
 	return ctx.JSON(utils.Succ("succ", mods))
 }
+
+var _arr = []string{"/static/imgs/0.jpg", "/static/imgs/1.jpg", "/static/imgs/2.jpg", "/static/imgs/3.jpg", "/static/imgs/4.jpg", "/static/imgs/5.jpg"}
