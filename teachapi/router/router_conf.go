@@ -102,7 +102,7 @@ body { background-color: #f8f8f8; -webkit-font-smoothing: antialiased; }
 <body>
 <div class="error">
     <p class="remind">您访问的页面不存在！</p>
-    <p><a class="button" href="/">返回主页</a>&nbsp;<a class="button" href="/swagger/index.html">文档页面</a></p>
+    <p><a class="button" target="_blank" href="https://blog.zxysilent.com/about">作者主页</a>&nbsp;<a class="button" target="_blank" href="https://github.com/zxysilent/teach">项目主页</a>&nbsp;<a class="button" target="_blank" href="/swagger/index.html">文档页面</a></p>
 </div>
 </body>
 </html>`
