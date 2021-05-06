@@ -71,14 +71,14 @@ func midJwt(next echo.HandlerFunc) echo.HandlerFunc {
 			}
 		}
 		if tokenRaw == "" {
-			return ctx.JSON(utils.ErrJwt(`请重新登陆`, `未发现hmt`))
+			return ctx.JSON(utils.ErrJwt("请重新登陆", "未发现hmt"))
 		}
 		hmtAuth, err := hmt.Verify(tokenRaw, conf.App.HmtKey)
 		if err == nil {
 			ctx.Set("auth", hmtAuth)
 			ctx.Set("uid", hmtAuth.Id)
 		} else {
-			return ctx.JSON(utils.ErrJwt(`请重新登陆","hmt验证失败`))
+			return ctx.JSON(utils.ErrJwt("请重新登陆", "token验证失败"))
 		}
 		return next(ctx)
 	}
