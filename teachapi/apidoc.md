@@ -18,13 +18,13 @@
 | Name | Located in | Description | Required | Schema |
 | ---- | ---------- | ----------- | -------- | ---- |
 | token | query | 凭证 | Yes | string |
-| body | body | request | Yes | [model.Article](#modelarticle) |
+| body | body | 请求数据 | Yes | [model.Article](#modelarticle) |
 
 ##### Responses
 
 | Code | Description | Schema |
 | ---- | ----------- | ------ |
-| 200 | 成功数据 | [model.Reply](#modelreply) |
+| 200 | 返回数据 | [model.Reply](#modelreply) |
 
 ### /adm/article/drop
 
@@ -44,7 +44,7 @@
 
 | Code | Description | Schema |
 | ---- | ----------- | ------ |
-| 200 | 成功数据 | [model.Reply](#modelreply) |
+| 200 | 返回数据 | [model.Reply](#modelreply) |
 
 ### /adm/article/edit
 
@@ -58,13 +58,13 @@
 | Name | Located in | Description | Required | Schema |
 | ---- | ---------- | ----------- | -------- | ---- |
 | token | query | 凭证 | Yes | string |
-| body | body | request | Yes | [model.Article](#modelarticle) |
+| body | body | 请求数据 | Yes | [model.Article](#modelarticle) |
 
 ##### Responses
 
 | Code | Description | Schema |
 | ---- | ----------- | ------ |
-| 200 | 成功数据 | [model.Reply](#modelreply) |
+| 200 | 返回数据 | [model.Reply](#modelreply) |
 
 ### /adm/auth/edit/info
 
@@ -85,7 +85,7 @@
 
 | Code | Description | Schema |
 | ---- | ----------- | ------ |
-| 200 | 成功数据 | [model.Reply](#modelreply) |
+| 200 | 返回数据 | [model.Reply](#modelreply) |
 
 ### /adm/auth/edit/passwd
 
@@ -107,7 +107,7 @@
 
 | Code | Description | Schema |
 | ---- | ----------- | ------ |
-| 200 | 成功数据 | [model.Reply](#modelreply) |
+| 200 | 返回数据 | [model.Reply](#modelreply) |
 
 ### /adm/auth/get
 
@@ -127,7 +127,7 @@
 
 | Code | Description | Schema |
 | ---- | ----------- | ------ |
-| 200 | 成功数据 | [model.Reply](#modelreply) & object |
+| 200 | 返回数据 | [model.Reply](#modelreply) & object |
 
 ### /adm/class/add
 
@@ -141,13 +141,13 @@
 | Name | Located in | Description | Required | Schema |
 | ---- | ---------- | ----------- | -------- | ---- |
 | token | query | 凭证 | Yes | string |
-| body | body | request | Yes | [model.Class](#modelclass) |
+| body | body | 请求数据 | Yes | [model.Class](#modelclass) |
 
 ##### Responses
 
 | Code | Description | Schema |
 | ---- | ----------- | ------ |
-| 200 | 成功数据 | [model.Reply](#modelreply) |
+| 200 | 返回数据 | [model.Reply](#modelreply) |
 
 ### /adm/class/drop
 
@@ -167,7 +167,7 @@
 
 | Code | Description | Schema |
 | ---- | ----------- | ------ |
-| 200 | 成功数据 | [model.Reply](#modelreply) |
+| 200 | 返回数据 | [model.Reply](#modelreply) |
 
 ### /adm/class/edit
 
@@ -181,13 +181,13 @@
 | Name | Located in | Description | Required | Schema |
 | ---- | ---------- | ----------- | -------- | ---- |
 | token | query | 凭证 | Yes | string |
-| body | body | request | Yes | [model.Class](#modelclass) |
+| body | body | 请求数据 | Yes | [model.Class](#modelclass) |
 
 ##### Responses
 
 | Code | Description | Schema |
 | ---- | ----------- | ------ |
-| 200 | 成功数据 | [model.Reply](#modelreply) |
+| 200 | 返回数据 | [model.Reply](#modelreply) |
 
 ### /adm/user/add
 
@@ -201,13 +201,13 @@
 | Name | Located in | Description | Required | Schema |
 | ---- | ---------- | ----------- | -------- | ---- |
 | token | query | 凭证 | Yes | string |
-| body | body | request | Yes | [model.User](#modeluser) |
+| body | body | 请求数据 | Yes | [model.User](#modeluser) |
 
 ##### Responses
 
 | Code | Description | Schema |
 | ---- | ----------- | ------ |
-| 200 | 成功数据 | [model.Reply](#modelreply) |
+| 200 | 返回数据 | [model.Reply](#modelreply) |
 
 ### /adm/user/drop
 
@@ -227,7 +227,7 @@
 
 | Code | Description | Schema |
 | ---- | ----------- | ------ |
-| 200 | 成功数据 | [model.Reply](#modelreply) |
+| 200 | 返回数据 | [model.Reply](#modelreply) |
 
 ### /adm/user/edit
 
@@ -241,13 +241,13 @@
 | Name | Located in | Description | Required | Schema |
 | ---- | ---------- | ----------- | -------- | ---- |
 | token | query | 凭证 | Yes | string |
-| body | body | request | Yes | [model.User](#modeluser) |
+| body | body | 请求数据 | Yes | [model.User](#modeluser) |
 
 ##### Responses
 
 | Code | Description | Schema |
 | ---- | ----------- | ------ |
-| 200 | 成功数据 | [model.Reply](#modelreply) |
+| 200 | 返回数据 | [model.Reply](#modelreply) |
 
 ### /api/article/edit/hits
 
@@ -266,7 +266,7 @@
 
 | Code | Description | Schema |
 | ---- | ----------- | ------ |
-| 200 | 成功数据 | [model.Reply](#modelreply) & object |
+| 200 | 返回数据 | [model.Reply](#modelreply) & object |
 
 ### /api/article/get
 
@@ -285,7 +285,7 @@
 
 | Code | Description | Schema |
 | ---- | ----------- | ------ |
-| 200 | 成功数据 | [model.Reply](#modelreply) & object |
+| 200 | 返回数据 | [model.Reply](#modelreply) & object |
 
 ### /api/article/page
 
@@ -305,7 +305,7 @@
 
 | Code | Description | Schema |
 | ---- | ----------- | ------ |
-| 200 | 成功数据 | [model.Reply](#modelreply) & object |
+| 200 | 返回数据 | [model.Reply](#modelreply) & object |
 
 ### /api/auth/login
 
@@ -325,7 +325,7 @@
 
 | Code | Description | Schema |
 | ---- | ----------- | ------ |
-| 200 | 成功数据 | [model.Reply](#modelreply) & object |
+| 200 | 返回数据 | [model.Reply](#modelreply) & object |
 
 ### /api/banner/all
 
@@ -338,7 +338,7 @@
 
 | Code | Description | Schema |
 | ---- | ----------- | ------ |
-| 200 | 成功数据 | [model.Reply](#modelreply) & object |
+| 200 | 返回数据 | [model.Reply](#modelreply) & object |
 
 ### /api/class/all
 
@@ -351,7 +351,7 @@
 
 | Code | Description | Schema |
 | ---- | ----------- | ------ |
-| 200 | 成功数据 | [model.Reply](#modelreply) & object |
+| 200 | 返回数据 | [model.Reply](#modelreply) & object |
 
 ### /api/class/get
 
@@ -370,7 +370,7 @@
 
 | Code | Description | Schema |
 | ---- | ----------- | ------ |
-| 200 | 成功数据 | [model.Reply](#modelreply) & object |
+| 200 | 返回数据 | [model.Reply](#modelreply) & object |
 
 ### /api/class/page
 
@@ -390,7 +390,7 @@
 
 | Code | Description | Schema |
 | ---- | ----------- | ------ |
-| 200 | 成功数据 | [model.Reply](#modelreply) & object |
+| 200 | 返回数据 | [model.Reply](#modelreply) & object |
 
 ### /api/sys/info
 
@@ -403,7 +403,7 @@
 
 | Code | Description | Schema |
 | ---- | ----------- | ------ |
-| 200 | 成功数据 | [model.Reply](#modelreply) & object |
+| 200 | 返回数据 | [model.Reply](#modelreply) & object |
 
 ### /api/upload/file
 
@@ -422,7 +422,7 @@
 
 | Code | Description | Schema |
 | ---- | ----------- | ------ |
-| 200 | 成功数据 | [model.Reply](#modelreply) |
+| 200 | 返回数据 | [model.Reply](#modelreply) |
 
 ### /api/upload/image
 
@@ -441,7 +441,7 @@
 
 | Code | Description | Schema |
 | ---- | ----------- | ------ |
-| 200 | 成功数据 | [model.Reply](#modelreply) |
+| 200 | 返回数据 | [model.Reply](#modelreply) |
 
 ### /api/user/get
 
@@ -460,7 +460,7 @@
 
 | Code | Description | Schema |
 | ---- | ----------- | ------ |
-| 200 | 成功数据 | [model.Reply](#modelreply) & object |
+| 200 | 返回数据 | [model.Reply](#modelreply) & object |
 
 ### /api/user/page
 
@@ -480,7 +480,7 @@
 
 | Code | Description | Schema |
 | ---- | ----------- | ------ |
-| 200 | 成功数据 | [model.Reply](#modelreply) & object |
+| 200 | 返回数据 | [model.Reply](#modelreply) & object |
 
 ### Models
 
@@ -490,7 +490,6 @@
 | ---- | ---- | ----------- | -------- |
 | author | string | 作者 | No |
 | cid | integer | cls id | No |
-| class | [model.Class](#modelclass) | 栏目 | No |
 | content | string | 详细 | No |
 | cunix | integer | 创建时间 | No |
 | hits | integer | 点击数 | No |

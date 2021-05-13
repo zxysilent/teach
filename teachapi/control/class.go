@@ -11,7 +11,7 @@ import (
 // @Tags class
 // @Summary 通过id获取class信息
 // @Param id query int true "id"
-// @Success 200 {object} model.Reply{data=model.Class} "成功数据"
+// @Success 200 {object} model.Reply{data=model.Class} "返回数据"
 // @Router /api/class/get [get]
 func ClassGet(ctx echo.Context) error {
 	ipt := &model.IptId{}
@@ -31,7 +31,7 @@ func ClassGet(ctx echo.Context) error {
 // @Summary 分页数据
 // @Param pi query int true "分页数"  default(1)
 // @Param ps query int true "每页条数[5,30]" default(8)
-// @Success 200 {object} model.Reply{data=[]model.Class} "成功数据"
+// @Success 200 {object} model.Reply{data=[]model.Class} "返回数据"
 // @Router /api/class/page [get]
 func ClassPage(ctx echo.Context) error {
 	// cid, err := strconv.Atoi(ctx.Param("cid"))
@@ -64,7 +64,7 @@ func ClassPage(ctx echo.Context) error {
 // ClassAll doc
 // @Tags class
 // @Summary 所有分类
-// @Success 200 {object} model.Reply{data=[]model.Class} "成功数据"
+// @Success 200 {object} model.Reply{data=[]model.Class} "返回数据"
 // @Router /api/class/all [get]
 func ClassAll(ctx echo.Context) error {
 	mods, err := model.ClassAll()
@@ -78,8 +78,8 @@ func ClassAll(ctx echo.Context) error {
 // @Tags class
 // @Summary 添加class信息
 // @Param token query string true "凭证"
-// @Param body body model.Class true "request"
-// @Success 200 {object} model.Reply "成功数据"
+// @Param body body model.Class true "请求数据"
+// @Success 200 {object} model.Reply "返回数据"
 // @Router /adm/class/add [post]
 func ClassAdd(ctx echo.Context) error {
 	ipt := &model.Class{}
@@ -98,8 +98,8 @@ func ClassAdd(ctx echo.Context) error {
 // @Tags class
 // @Summary 修改class信息
 // @Param token query string true "凭证"
-// @Param body body model.Class true "request"
-// @Success 200 {object} model.Reply "成功数据"
+// @Param body body model.Class true "请求数据"
+// @Success 200 {object} model.Reply "返回数据"
 // @Router /adm/class/edit [post]
 func ClassEdit(ctx echo.Context) error {
 	ipt := &model.Class{}
@@ -119,7 +119,7 @@ func ClassEdit(ctx echo.Context) error {
 // @Summary 删除class信息
 // @Param body body model.IptId true "请求数据"
 // @Param token query string true "凭证"
-// @Success 200 {object} model.Reply "成功数据"
+// @Success 200 {object} model.Reply "返回数据"
 // @Router /adm/class/drop [post]
 func ClassDrop(ctx echo.Context) error {
 	ipt := &model.IptId{}

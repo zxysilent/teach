@@ -2,15 +2,15 @@ package model
 
 // Article 文章
 type Article struct {
-	Id      int    `json:"id"`           //主键
-	Cid     int    `json:"cid"`          //cls id
-	Class   *Class `db:"-" json:"class"` //栏目
-	Title   string `json:"title"`        //标题
-	Author  string `json:"author"`       //作者
-	Hits    int    `json:"hits"`         //点击数
-	Content string `json:"content"`      //详细
-	Uunix   int64  `json:"uunix"`        //修改时间
-	Cunix   int64  `json:"cunix"`        //创建时间
+	Id      int    `json:"id"`                                //主键
+	Cid     int    `json:"cid"`                               //cls id
+	Class   *Class `db:"-" swaggerignore:"true" json:"class"` //栏目
+	Title   string `json:"title"`                             //标题
+	Author  string `json:"author"`                            //作者
+	Hits    int    `json:"hits"`                              //点击数
+	Content string `json:"content"`                           //详细
+	Uunix   int64  `json:"uunix"`                             //修改时间
+	Cunix   int64  `json:"cunix"`                             //创建时间
 }
 
 // ArticleGet 查询一条新闻

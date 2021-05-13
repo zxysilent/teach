@@ -17,7 +17,7 @@ import (
 // @Accept mpfd
 // @Param num formData string true "账号" default(admin)
 // @Param passwd formData string true "密码" default(12348765)
-// @Success 200 {object} model.Reply{data=string} "成功数据"
+// @Success 200 {object} model.Reply{data=string} "返回数据"
 // @Router /api/auth/login [post]
 func AuthLogin(ctx echo.Context) error {
 	ipt := struct {
@@ -53,7 +53,7 @@ func AuthLogin(ctx echo.Context) error {
 // @Summary 登录信息
 // @Param token query string false "凭证"
 // @Param Authorization header string false "凭证"
-// @Success 200 {object} model.Reply{data=model.User} "成功数据"
+// @Success 200 {object} model.Reply{data=model.User} "返回数据"
 // @Router /adm/auth/get [get]
 func AuthGet(ctx echo.Context) error {
 	mod, _ := model.UserGet(ctx.Get("uid").(int))
@@ -65,7 +65,7 @@ func AuthGet(ctx echo.Context) error {
 // @Summary 修改自己的信息
 // @Param token query string false "凭证"
 // @Param Authorization header string false "凭证"
-// @Success 200 {object} model.Reply "成功数据"
+// @Success 200 {object} model.Reply "返回数据"
 // @Param body body model.User true "request"
 // @Router /adm/auth/edit/info [post]
 func AuthEditInfo(ctx echo.Context) error {
@@ -88,7 +88,7 @@ func AuthEditInfo(ctx echo.Context) error {
 // @Param Authorization header string false "凭证"
 // @Param opass formData string true "旧密码"
 // @Param npass formData string true "新密码"
-// @Success 200 {object} model.Reply "成功数据"
+// @Success 200 {object} model.Reply "返回数据"
 // @Router /adm/auth/edit/passwd [post]
 func AuthEditPasswd(ctx echo.Context) error {
 	ipt := &struct {

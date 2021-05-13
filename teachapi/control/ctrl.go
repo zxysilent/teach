@@ -25,7 +25,7 @@ import (
 // @Summary 上传文件
 // @Accept  mpfd
 // @Param file formData file true "file"
-// @Success 200 {object} model.Reply "成功数据"
+// @Success 200 {object} model.Reply "返回数据"
 // @Router /api/upload/file [post]
 func UploadFile(ctx echo.Context) error {
 	f, err := ctx.FormFile("file")
@@ -59,7 +59,7 @@ func UploadFile(ctx echo.Context) error {
 // @Summary 上传图片
 // @Accept  mpfd
 // @Param file formData file true "file"
-// @Success 200 {object} model.Reply "成功数据"
+// @Success 200 {object} model.Reply "返回数据"
 // @Router /api/upload/image [post]
 func UploadImage(ctx echo.Context) error {
 	file, err := ctx.FormFile("file")
@@ -109,7 +109,7 @@ func UploadImage(ctx echo.Context) error {
 // SysInfo doc
 // @Tags ctrl
 // @Summary 系统信息
-// @Success 200 {object} model.Reply{data=model.SysInfo} "成功数据"
+// @Success 200 {object} model.Reply{data=model.SysInfo} "返回数据"
 // @Router /api/sys/info [get]
 func SysInfo(ctx echo.Context) error {
 	state := struct {
@@ -129,7 +129,7 @@ func SysInfo(ctx echo.Context) error {
 // BannerAll doc
 // @Tags banner
 // @Summary 所有轮播
-// @Success 200 {object} model.Reply{data=[]model.Banner} "成功数据"
+// @Success 200 {object} model.Reply{data=[]model.Banner} "返回数据"
 // @Router /api/banner/all [get]
 func BannerAll(ctx echo.Context) error {
 	mods := make([]model.Banner, 0, 4)
