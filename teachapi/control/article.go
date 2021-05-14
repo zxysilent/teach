@@ -1,6 +1,7 @@
 package control
 
 import (
+	"strconv"
 	"teach/model"
 
 	"github.com/labstack/echo/v4"
@@ -30,6 +31,7 @@ func ArticleGet(ctx echo.Context) error {
 // @Tags article
 // @Summary 分页数据
 // @Param pi query int true "分页数"  default(1)
+// @Param class_id query int true "分类,0不限制"  default(0)
 // @Param ps query int true "每页条数[5,30]" default(8)
 // @Success 200 {object} model.Reply{data=[]model.Article} "返回数据"
 // @Router /api/article/page [get]
@@ -38,6 +40,7 @@ func ArticlePage(ctx echo.Context) error {
 	// if err != nil {
 	// 	return ctx.JSON(utils.ErrIpt("数据输入错误", err.Error()))
 	// }
+	class_id, _ := strconv.Atoi(ctx.QueryParam("class_id"))
 	ipt := &model.Page{}
 	err := ctx.Bind(ipt)
 	if err != nil {
@@ -47,11 +50,11 @@ func ArticlePage(ctx echo.Context) error {
 	if err != nil {
 		return ctx.JSON(utils.ErrIpt("分页信息输入错误", err.Error()))
 	}
-	count, _ := model.ArticleCount()
+	count, _ := model.ArticleCount(class_id)
 	if count < 1 {
 		return ctx.JSON(utils.ErrOpt("未查询到数据", " count < 1"))
 	}
-	mods, err := model.ArticlePage(ipt.Pi, ipt.Ps)
+	mods, err := model.ArticlePage(ipt.Pi, ipt.Ps, class_id)
 	if err != nil {
 		return ctx.JSON(utils.ErrOpt("查询数据错误", err.Error()))
 	}

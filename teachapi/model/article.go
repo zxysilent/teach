@@ -31,9 +31,14 @@ func ArticleAll() ([]Article, error) {
 }
 
 // ArticlePage 分页查询新闻
-func ArticlePage(pi int, ps int) ([]Article, error) {
+func ArticlePage(pi int, ps int, class_id int) ([]Article, error) {
 	mods := make([]Article, 0, 4)
-	err := Db.Select(&mods, "SELECT * FROM Article LIMIT ? OFFSET ?", ps, (pi-1)*ps)
+	var err error
+	if class_id > 0 {
+		err = Db.Select(&mods, "SELECT * FROM Article WHERE cid = ?  LIMIT ? OFFSET ?", class_id, ps, (pi-1)*ps)
+	} else {
+		err = Db.Select(&mods, "SELECT * FROM Article LIMIT ? OFFSET ?", ps, (pi-1)*ps)
+	}
 	for idx := range mods {
 		mods[idx].Class, _ = ClassGet(mods[idx].Cid)
 	}
@@ -41,9 +46,15 @@ func ArticlePage(pi int, ps int) ([]Article, error) {
 }
 
 // ArticleCount 查询新闻总数
-func ArticleCount() (int, error) {
+func ArticleCount(class_id int) (int, error) {
 	var count int
-	err := Db.Get(&count, "SELECT count(id) as count FROM Article")
+	var err error
+	if class_id > 0 {
+		err = Db.Get(&count, "SELECT count(id) as count FROM Article WHERE cid = ? ", class_id)
+	} else {
+		err = Db.Get(&count, "SELECT count(id) as count FROM Article")
+	}
+
 	return count, err
 }
 
